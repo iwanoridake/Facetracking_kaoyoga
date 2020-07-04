@@ -69,7 +69,7 @@ public class KaoyogaPlayer_Haniwa : MonoBehaviour
 					}
 					else
 					{
-						blendshapes = "口角を上げましょう！！";						
+						blendshapes = "口を「え」の形に開けて" + ("\n") + "口角を上げましょう！！";						
 					}
 				}
 				else
