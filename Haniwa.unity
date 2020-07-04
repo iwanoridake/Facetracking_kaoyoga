@@ -324,8 +324,8 @@ GameObject:
   m_Component:
   - component: {fileID: 539730393}
   - component: {fileID: 539730394}
-  - component: {fileID: 539730395}
   - component: {fileID: 539730396}
+  - component: {fileID: 539730395}
   m_Layer: 0
   m_Name: BlendshapeOutput
   m_TagString: Untagged
@@ -366,9 +366,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539730392}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51271aee571cc4844ae45be8120635da, type: 3}
+  m_Script: {fileID: 11500000, guid: 2cc5e220e5a9940d3a6eaa33690513cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &539730396
@@ -378,7 +378,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539730392}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 35c9d84c1f43647a4b4d9ebe3f29b5fa, type: 3}
   m_Name: 
@@ -472,7 +472,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!1 &1176133656
 GameObject:
@@ -541,5 +541,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
