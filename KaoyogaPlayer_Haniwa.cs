@@ -169,7 +169,10 @@ public class KaoyogaPlayer_Haniwa : MonoBehaviour
             if (currentBlendShapes["mouthSmile_L"] >= 0.4 || currentBlendShapes["mouthSmile_L"] >= 0.4)
 			{
 				hugugao = true;
-				countup += Time.deltaTime;
+				if (!keep)
+				{
+					countup += Time.deltaTime;
+				}
 			}
 			else
 			{
@@ -189,7 +192,10 @@ public class KaoyogaPlayer_Haniwa : MonoBehaviour
 			if ((currentBlendShapes["mouthSmile_L"] >= 0.3 || currentBlendShapes["mouthSmile_L"] >= 0.3) && (currentBlendShapes["eyeLookUp_L"] >= 0.2 || currentBlendShapes["eyeLookUp_R"] >= 0.2))
 			{
 				hugugao_2 = true;
-				countup += Time.deltaTime;
+				if (!keep2)
+				{
+					countup += Time.deltaTime;
+				}
 			}
 			else
 			{
