@@ -67,7 +67,7 @@ public class KaoyogaPlayer_Bee : MonoBehaviour
 						blendshapes = "5秒キープ！" + ("\n");
 						//blendshapes += currentBlendShapes["mouthSmile_L"].ToString() + ("\n");
 						//blendshapes += currentBlendShapes["mouthSmile_R"].ToString() + ("\n");
-						blendshapes += ((int)(3 + 1 - countup)).ToString();
+						blendshapes += ((int)(5 + 1 - countup)).ToString();
 					}
 					else
 					{
