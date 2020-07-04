@@ -201,7 +201,7 @@ public class KaoyogaPlayer_Bee : MonoBehaviour
 				hugugao = false;
 				countup = 0;
 			}
-            if (countup > 5.0f && repeat != 1)
+            if (countup > 5.0f)
             {
 				keep = true;
 				countup = 0;
