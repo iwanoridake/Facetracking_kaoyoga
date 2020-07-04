@@ -89,8 +89,8 @@ public class KaoyogaPlayer_Bee : MonoBehaviour
             {
 				if (currentBlendShapes["eyeLookUp_L"] < 0.1 || currentBlendShapes["eyeLookUp_R"] < 0.1)
 				{
-					blendshapes = $"はい。では、もう1度繰り返してみましょう";
-					invoke("Return", 1.5);
+					blendshapes = "はい。では、もう1度繰り返してみましょう";
+					Invoke("Return", 1.5f);
 				}
                 //if (keep2 == false)
                 //{
@@ -155,7 +155,7 @@ public class KaoyogaPlayer_Bee : MonoBehaviour
     {
 		repeat += 1;
 		stage = 1;
-		keep = 0;
+		keep = false;
 	}
 
 	void FaceAdded(ARFaceAnchor anchorData)
@@ -180,7 +180,7 @@ public class KaoyogaPlayer_Bee : MonoBehaviour
 	{
 		if(stage==1)
 		{
-            if ((currentBlendShapes["eyeLookUp_L"] >= 0.1 || currentBlendShapes["eyeLookUp_R"] >= 0.1) && currentBlendShapes["tongueOut"] >= 0.02)
+            if ((currentBlendShapes["eyeLookUp_L"] >= 0.1 || currentBlendShapes["eyeLookUp_R"] >= 0.1) && currentBlendShapes["tongueOut"] >= 0.01)
 			{
 				hugugao = true;
 				if (!keep)
