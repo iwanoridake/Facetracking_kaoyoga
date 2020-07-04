@@ -164,6 +164,10 @@ void FaceRemoved(ARFaceAnchor anchorData)
 	// Update is called once per frame
 	void Update()
 	{
+
+		[DllImport("__Internal")]
+    	private static extern void playSystemSound(int n);
+		
 		if(stage==1)
 		{
 			if (currentBlendShapes["cheekPuff"] >= 0.18)
@@ -183,6 +187,13 @@ void FaceRemoved(ARFaceAnchor anchorData)
 			{
 				keep = true;
 				countup = 0;
+
+				#if UNITY_EDITOR
+				Debug.Log("Play system sound or vibration on real devices");
+				#else
+				playSystemSound(1001);
+				#endif
+
 			}
 			else if (keep)
 			{
@@ -220,6 +231,13 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				keep2 = true;
 				countup = 0;
 				//StartCoroutine("DelayMethod");
+
+				#if UNITY_EDITOR
+				Debug.Log("Play system sound or vibration on real devices");
+				#else
+				playSystemSound(1001);
+				#endif
+
 			}
 			else if (keep2)
 			{
@@ -252,6 +270,13 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				keep3 = true;
 				countup = 0;
 				StartCoroutine("DelayMethod");
+
+				#if UNITY_EDITOR
+				Debug.Log("Play system sound or vibration on real devices");
+				#else
+				playSystemSound(1001);
+				#endif
+
 			}
 		}
 
