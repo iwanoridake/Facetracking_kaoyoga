@@ -14,8 +14,8 @@ public class KaoyogaPlayer : MonoBehaviour
 	bool keep = false;
 	bool keep2 = false;
 	bool keep3 = false;
-	bool hugugao_R = false;
-	bool hugugao_L = false;
+	bool hugugao_2 = false;
+	bool hugugao_3 = false;
 
 	// Use this for initialization
 	void Start()
@@ -68,6 +68,7 @@ public class KaoyogaPlayer : MonoBehaviour
 					else
 					{
 						blendshapes = "ほうれい線を伸ばすように\n" + "口に空気を含みましょう";
+						
 
 					}
 				}
@@ -79,13 +80,15 @@ public class KaoyogaPlayer : MonoBehaviour
             {
 				if (keep2 == false)
 				{
-					if (hugugao_R)
+					if (hugugao_2)
 					{
 						blendshapes = "5秒キープ！";
 					}
 					else
 					{
 						blendshapes = "空気を口に含み、\n"+"空気を左に移動して、\n" + "左のほうれい線をのばしましょう";
+						blendshapes += currentBlendShapes["mouthLeft"].ToString()+("\n");
+						blendshapes += currentBlendShapes["mouthFrown_R"].ToString() + ("\n");
 
 					}
 				}
@@ -99,13 +102,15 @@ public class KaoyogaPlayer : MonoBehaviour
             {
 				if (keep3 == false)
 				{
-					if (hugugao_L)
+					if (hugugao_3)
 					{
 						blendshapes = "5秒キープ！";
 					}
 					else
 					{
 						blendshapes = "空気を口に含み、\n" + "空気を右に移動して、\n" + "右のほうれい線をのばしましょう";
+						blendshapes += currentBlendShapes["mouthRight"].ToString() + ("\n");
+						blendshapes += currentBlendShapes["mouthFrown_L"].ToString() + ("\n");
 
 					}
 				}
@@ -157,7 +162,7 @@ public class KaoyogaPlayer : MonoBehaviour
 	{
 		if(stage==1)
 		{
-			if (currentBlendShapes["cheekPuff"] >= 0.15)
+            if (currentBlendShapes["cheekPuff"] >= 0.18)
 			{
 				hugugao = true;
 				countup += Time.deltaTime;
@@ -177,14 +182,14 @@ public class KaoyogaPlayer : MonoBehaviour
 
 		if (stage == 2)
 		{
-			if (currentBlendShapes["cheekPuff"] >= 0.1 && (currentBlendShapes["mouthLeft"] >= 0.03||currentBlendShapes["mouthFrown_R"] >= 0.3 || currentBlendShapes["mouthDimple_R"] >= 0.3))
+			if (currentBlendShapes["cheekPuff"] >= 0.13 && (currentBlendShapes["mouthLeft"] >= 0.04 || currentBlendShapes["mouthFrown_R"] >= 0.3))
 			{
-				hugugao_R = true;
+				hugugao_2 = true;
 				countup += Time.deltaTime;
 			}
 			else
 			{
-				hugugao_R = false;
+				hugugao_2 = false;
 				countup = 0;
 			}
 			if (countup > 5.0f)
@@ -197,14 +202,14 @@ public class KaoyogaPlayer : MonoBehaviour
 
 		if (stage == 3)
 		{
-			if (currentBlendShapes["cheekPuff"] >= 0.1 && (currentBlendShapes["mouthRight"] >= 0.03||currentBlendShapes["mouthFrown_L"] >= 0.3 || currentBlendShapes["mouthDimple_L"] >= 0.3))
+			if (currentBlendShapes["cheekPuff"] >= 0.13 && (currentBlendShapes["mouthRight"] >= 0.04 || currentBlendShapes["mouthFrown_L"] >= 0.21))
 			{
-				hugugao_L = true;
+				hugugao_3 = true;
 				countup += Time.deltaTime;
 			}
 			else
 			{
-				hugugao_L = false;
+				hugugao_3 = false;
 				countup = 0;
 			}
 			if (countup > 5.0f)
