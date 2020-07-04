@@ -82,7 +82,7 @@ public class KaoyogaPlayer_Bee : MonoBehaviour
 
 			else if (repeat == 1)
 			{
-				blendshapes = "エクササイズ終了です";
+				stage = 3;
 			}
 
 			else if (stage == 2)
@@ -90,7 +90,7 @@ public class KaoyogaPlayer_Bee : MonoBehaviour
 				if (currentBlendShapes["eyeLookUp_L"] < 0.1 || currentBlendShapes["eyeLookUp_R"] < 0.1)
 				{
 					blendshapes = "はい。では、もう1度繰り返してみましょう";
-					Invoke("Return", 1.5f);
+					Invoke("Return", 2.5f);
 				}
                 //if (keep2 == false)
                 //{
@@ -112,28 +112,33 @@ public class KaoyogaPlayer_Bee : MonoBehaviour
                 //}
 
             }
-            //else if (stage == 3)
-            //         {
-            //	if (keep3 == false)
-            //	{
-            //		if (hugugao_3)
-            //		{
-            //			blendshapes = "5秒キープ！";
-            //		}
-            //		else
-            //		{
-            //			blendshapes = "空気を口に含み、\n" + "空気を右に移動して、\n" + "右のほうれい線をのばしましょう";
-            //			blendshapes += currentBlendShapes["mouthRight"].ToString() + ("\n");
-            //			blendshapes += currentBlendShapes["mouthFrown_L"].ToString() + ("\n");
 
-            //		}
-            //	}
-            //	else
-            //	{
-            //		blendshapes = "OK！";
-            //	}
-            //}
-			
+            else
+            {
+				blendshapes = "エクササイズ終了です";
+			}
+			//else if (stage == 3)
+			//         {
+			//	if (keep3 == false)
+			//	{
+			//		if (hugugao_3)
+			//		{
+			//			blendshapes = "5秒キープ！";
+			//		}
+			//		else
+			//		{
+			//			blendshapes = "空気を口に含み、\n" + "空気を右に移動して、\n" + "右のほうれい線をのばしましょう";
+			//			blendshapes += currentBlendShapes["mouthRight"].ToString() + ("\n");
+			//			blendshapes += currentBlendShapes["mouthFrown_L"].ToString() + ("\n");
+
+			//		}
+			//	}
+			//	else
+			//	{
+			//		blendshapes = "OK！";
+			//	}
+			//}
+
 
 			//GUI.skin.box.fontSize = 22;
 			GUI.skin.box.fontSize = 40;
