@@ -63,13 +63,14 @@ public class KaoyogaPlayer_Haniwa : MonoBehaviour
 				{
 					if (hugugao)
 					{
-						blendshapes = "3秒キープ！";
-						blendshapes += currentBlendShapes["mouthSmile_L"].ToString() + ("\n");
-						blendshapes += currentBlendShapes["mouthSmile_R"].ToString() + ("\n");
+						blendshapes = "3秒キープ！" + ("\n");
+						//blendshapes += currentBlendShapes["mouthSmile_L"].ToString() + ("\n");
+						//blendshapes += currentBlendShapes["mouthSmile_R"].ToString() + ("\n");
+						blendshapes += ((int)(3 + 1 - countup)).ToString();
 					}
 					else
 					{
-						blendshapes = "口角を上げましょう！！";						
+						blendshapes = "口を「え」の形に開けて" + ("\n") + "口角を上げましょう！！";						
 					}
 				}
 				else
@@ -84,9 +85,10 @@ public class KaoyogaPlayer_Haniwa : MonoBehaviour
 				{
 					if (hugugao_2)
 					{
-						blendshapes = "10秒キープ！";
-						blendshapes += currentBlendShapes["eyeLookUp_R"].ToString() + ("\n");
-						blendshapes += currentBlendShapes["eyeLookUp_L"].ToString() + ("\n");
+						blendshapes = "10秒キープ！" + ("\n");
+						//blendshapes += currentBlendShapes["eyeLookUp_R"].ToString() + ("\n");
+						//blendshapes += currentBlendShapes["eyeLookUp_L"].ToString() + ("\n");
+						blendshapes += ((int)(10 + 1 - countup)).ToString();
 					}
 					else
 					{
