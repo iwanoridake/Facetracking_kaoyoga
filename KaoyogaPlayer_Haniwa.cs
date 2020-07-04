@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.iOS;
 
-public class KaoyogaPlayer : MonoBehaviour
+public class KaoyogaPlayer_Haniwa : MonoBehaviour
 {
 
 	bool shapeEnabled = false;
@@ -59,13 +59,13 @@ public class KaoyogaPlayer : MonoBehaviour
 
 			if (stage == 1)
 			{
-				blendshapes += currentBlendShapes["mouthSmile_L"].ToString() + ("\n");
-				blendshapes += currentBlendShapes["mouthSmile_R"].ToString() + ("\n");
 				if (keep == false)
 				{
 					if (hugugao)
 					{
-						blendshapes = "2秒キープ！";
+						blendshapes = "3秒キープ！";
+						blendshapes += currentBlendShapes["mouthSmile_L"].ToString() + ("\n");
+						blendshapes += currentBlendShapes["mouthSmile_R"].ToString() + ("\n");
 					}
 					else
 					{
@@ -79,13 +79,14 @@ public class KaoyogaPlayer : MonoBehaviour
 			}
 			else if (stage == 2)
             {
-				blendshapes += currentBlendShapes["eyeLookUp_R"].ToString() + ("\n");
-				blendshapes += currentBlendShapes["eyeLookUp_L"].ToString() + ("\n");
+				blendshapes = "";
 				if (keep2 == false)
 				{
 					if (hugugao_2)
 					{
 						blendshapes = "10秒キープ！";
+						blendshapes += currentBlendShapes["eyeLookUp_R"].ToString() + ("\n");
+						blendshapes += currentBlendShapes["eyeLookUp_L"].ToString() + ("\n");
 					}
 					else
 					{
@@ -173,7 +174,7 @@ public class KaoyogaPlayer : MonoBehaviour
 				hugugao = false;
 				countup = 0;
 			}
-            if (countup > 2.0f)
+            if (countup > 3.0f)
             {
 				keep = true;
 				countup = 0;
