@@ -13,6 +13,7 @@ public class KaoyogaPlayer_Bee : MonoBehaviour
 	int repeat = 0;
 	bool hugugao = false;
 	bool keep = false;
+	bool returnflag = false;
 	//bool keep2 = false;
 	//bool keep3 = false;
 	//bool hugugao_2 = false;
@@ -85,11 +86,12 @@ public class KaoyogaPlayer_Bee : MonoBehaviour
 				stage = 3;
 			}
 
-			else if (stage == 2)
+			else if (stage == 2 && !returnflag)
             {
 				if (currentBlendShapes["eyeLookUp_L"] < 0.1 || currentBlendShapes["eyeLookUp_R"] < 0.1)
 				{
 					blendshapes = "はい。では、もう1度繰り返してみましょう";
+					returnflag = true;
 					Invoke("Return", 2.5f);
 				}
                 //if (keep2 == false)
@@ -113,7 +115,7 @@ public class KaoyogaPlayer_Bee : MonoBehaviour
 
             }
 
-            else
+            if(stage > 2)
             {
 				blendshapes = "エクササイズ終了です";
 			}
@@ -161,6 +163,7 @@ public class KaoyogaPlayer_Bee : MonoBehaviour
 		repeat += 1;
 		stage = 1;
 		keep = false;
+		returnflag = false;
 	}
 
 	void FaceAdded(ARFaceAnchor anchorData)
@@ -198,7 +201,7 @@ public class KaoyogaPlayer_Bee : MonoBehaviour
 				hugugao = false;
 				countup = 0;
 			}
-            if (countup > 5.0f)
+            if (countup > 5.0f && repeat != 1)
             {
 				keep = true;
 				countup = 0;
