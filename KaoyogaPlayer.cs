@@ -189,11 +189,7 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				if (!keep)
 				{
 					countup += Time.deltaTime;
-					#if UNITY_EDITOR
-				Debug.Log("Play system sound or vibration on real devices");
-				#else
-				playSystemSound(1013);
-				#endif
+					
 				}
 			}
 			else
@@ -237,12 +233,7 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				if (!keep2)
 				{
 					countup += Time.deltaTime;
-					Debug.Log("Play system sound or vibration on real devices");
-#if UNITY_EDITOR
-				Debug.Log("Play system sound or vibration on real devices");
-				#else
-				playSystemSound(1001);
-				#endif
+					
 				}
 			}
 			else
@@ -259,9 +250,8 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				#if UNITY_EDITOR
 				Debug.Log("Play system sound or vibration on real devices");
 				#else
-				playSystemSound(1001);
+				playSystemSound(1022);
 				#endif
-
 			}
 			else if (keep2)
 			{
@@ -282,11 +272,7 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				if (!keep3)
 				{
 					countup += Time.deltaTime;
-					#if UNITY_EDITOR
-				Debug.Log("Play system sound or vibration on real devices");
-				#else
-				playSystemSound(1001);
-				#endif
+					
 				}
 			}
 			else
@@ -303,9 +289,8 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				#if UNITY_EDITOR
 				Debug.Log("Play system sound or vibration on real devices");
 				#else
-				playSystemSound(1001);
+				playSystemSound(1022);
 				#endif
-
 			}
 		}
 
