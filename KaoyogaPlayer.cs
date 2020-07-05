@@ -65,7 +65,7 @@ void OnGUI()
 				if (hugugao)
 				{
 					blendshapes = "5秒キープ！" + ("\n"); ;
-					//blendshapes += ((int)(5 + 1 - countup)).ToString();
+					blendshapes += ((int)(5 + 1 - countup)).ToString();
 				}
 				else
 				{
