@@ -18,6 +18,10 @@ bool keep3 = false;
 bool hugugao_2 = false;
 bool hugugao_3 = false;
 
+public AudioClip sound1;
+AudioSource audioSource;
+bool soundPlay = false;
+
 // Use this for initialization
 void Start()
 {
@@ -25,7 +29,7 @@ void Start()
 	UnityARSessionNativeInterface.ARFaceAnchorUpdatedEvent += FaceUpdated;
 	UnityARSessionNativeInterface.ARFaceAnchorRemovedEvent += FaceRemoved;
 		
-
+	audioSource = GetComponent<AudioSource>();
 }
 
 private IEnumerator DelayMethod()
@@ -180,7 +184,10 @@ void FaceRemoved(ARFaceAnchor anchorData)
 	{
 
 		
-		
+		if(!soundPlay)
+		{
+			audioSource.PlayOneShot(sound1);
+		}
 		if(stage==1)
 		{
 			if (currentBlendShapes["cheekPuff"] >= 0.18)
@@ -225,6 +232,10 @@ void FaceRemoved(ARFaceAnchor anchorData)
 
 		}
 
+		if(!soundPlay)
+		{
+			audioSource.PlayOneShot(sound1);
+		}
 		if (stage == 2)
 		{
 			if (currentBlendShapes["cheekPuff"] >= 0.13 && (currentBlendShapes["mouthLeft"] >= 0.04 || currentBlendShapes["mouthFrown_R"] >= 0.3))
@@ -264,6 +275,10 @@ void FaceRemoved(ARFaceAnchor anchorData)
 			}
 	}
 
+		if(!soundPlay)
+		{
+			audioSource.PlayOneShot(sound1);
+		}
 		if (stage == 3)
 		{
 			if (currentBlendShapes["cheekPuff"] >= 0.13 && (currentBlendShapes["mouthRight"] >= 0.02 || currentBlendShapes["mouthFrown_L"] >= 0.21))
