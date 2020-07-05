@@ -19,6 +19,9 @@ bool hugugao_2 = false;
 bool hugugao_3 = false;
 
 public AudioClip sound1;
+public AudioClip sound2;
+public AudioClip sound3;
+public AudioClip sound4;
 AudioSource audioSource;
 bool soundPlay = false;
 
@@ -187,6 +190,7 @@ void FaceRemoved(ARFaceAnchor anchorData)
 		if(!soundPlay)
 		{
 			audioSource.PlayOneShot(sound1);
+			soundPlay = true;
 		}
 		if(stage==1)
 		{
@@ -215,6 +219,8 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				playSystemSound(1022);
 				#endif
 
+				soundPlay = false;
+
 			}
 			else if (keep)
 			{
@@ -234,7 +240,8 @@ void FaceRemoved(ARFaceAnchor anchorData)
 
 		if(!soundPlay)
 		{
-			audioSource.PlayOneShot(sound1);
+			audioSource.PlayOneShot(sound2);
+			soundPlay = true;
 		}
 		if (stage == 2)
 		{
@@ -263,6 +270,8 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				#else
 				playSystemSound(1022);
 				#endif
+
+				soundPlay = false;
 			}
 			else if (keep2)
 			{
@@ -277,7 +286,8 @@ void FaceRemoved(ARFaceAnchor anchorData)
 
 		if(!soundPlay)
 		{
-			audioSource.PlayOneShot(sound1);
+			audioSource.PlayOneShot(sound3);
+			soundPlay = true;
 		}
 		if (stage == 3)
 		{
@@ -306,6 +316,13 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				#else
 				playSystemSound(1022);
 				#endif
+
+				soundPlay = false;
+				if(!soundPlay)
+				{
+				audioSource.PlayOneShot(sound4);
+				soundPlay = true;
+				}
 			}
 		}
 

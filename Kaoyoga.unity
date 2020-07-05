@@ -384,6 +384,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound1: {fileID: 0}
+  sound2: {fileID: 0}
+  sound3: {fileID: 0}
+  sound4: {fileID: 0}
 --- !u!1 &1121666029
 GameObject:
   m_ObjectHideFlags: 0
@@ -671,6 +674,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sound1: {fileID: 8300000, guid: 64262579752f14aa9a20ee891c1bf8a6, type: 3}
+  sound2: {fileID: 8300000, guid: 7870a76f790644c93af46f8227cb12ad, type: 3}
+  sound3: {fileID: 8300000, guid: 32f3b259d81bf4c86a0cdd1d5751787e, type: 3}
+  sound4: {fileID: 8300000, guid: 34a23c440bf9d46659f7e55cb09faa5b, type: 3}
 --- !u!4 &1472218211
 Transform:
   m_ObjectHideFlags: 0
