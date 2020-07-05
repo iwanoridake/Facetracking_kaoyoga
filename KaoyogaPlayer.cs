@@ -65,7 +65,7 @@ void OnGUI()
 				if (hugugao)
 				{
 					blendshapes = "5秒キープ！" + ("\n"); ;
-					blendshapes += ((int)(5 + 1 - countup)).ToString();
+					//blendshapes += ((int)(5 + 1 - countup)).ToString();
 				}
 				else
 				{
@@ -90,8 +90,8 @@ void OnGUI()
 				else
 				{
 					blendshapes = "空気を口に含み、\n"+"空気を左に移動して、\n" + "左のほうれい線をのばしましょう" + ("\n"); ;
-					blendshapes += currentBlendShapes["mouthLeft"].ToString()+("\n");
-					blendshapes += currentBlendShapes["mouthFrown_R"].ToString() + ("\n");
+					//blendshapes += currentBlendShapes["mouthLeft"].ToString()+("\n");
+					//blendshapes += currentBlendShapes["mouthFrown_R"].ToString() + ("\n");
 
 				}
 			}
@@ -113,8 +113,8 @@ void OnGUI()
 				else
 				{
 					blendshapes = "空気を口に含み、\n" + "空気を右に移動して、\n" + "右のほうれい線をのばしましょう" + ("\n"); ;
-					blendshapes += currentBlendShapes["mouthRight"].ToString() + ("\n");
-					blendshapes += currentBlendShapes["mouthFrown_L"].ToString() + ("\n");
+					//blendshapes += currentBlendShapes["mouthRight"].ToString() + ("\n");
+					//blendshapes += currentBlendShapes["mouthFrown_L"].ToString() + ("\n");
 
 				}
 			}
@@ -204,7 +204,7 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				#if UNITY_EDITOR
 				Debug.Log("Play system sound or vibration on real devices");
 				#else
-				playSystemSound(1001);
+				playSystemSound(1022);
 				#endif
 
 			}

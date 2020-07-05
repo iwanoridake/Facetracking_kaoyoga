@@ -234,7 +234,7 @@ public class KaoyogaPlayer_Haniwa : MonoBehaviour
 				#if UNITY_EDITOR
 				Debug.Log("Play system sound or vibration on real devices");
 				#else
-				playSystemSound(1001);
+				playSystemSound(1022);
 				#endif
 
 				StartCoroutine("DelayMethod");
