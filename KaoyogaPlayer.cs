@@ -188,13 +188,13 @@ void FaceRemoved(ARFaceAnchor anchorData)
 
 		if (shapeEnabled)
 		{
-			if (!soundPlay)
-			{
-				audioSource.PlayOneShot(sound1);
-				soundPlay = true;
-			}
 			if (stage == 1)
 			{
+				if (!soundPlay)
+				{
+					audioSource.PlayOneShot(sound1);
+					soundPlay = true;
+				}
 				if (currentBlendShapes["cheekPuff"] >= 0.18)
 				{
 					hugugao = true;
@@ -239,13 +239,13 @@ void FaceRemoved(ARFaceAnchor anchorData)
 
 			}
 
-			if (!soundPlay)
-			{
-				audioSource.PlayOneShot(sound2);
-				soundPlay = true;
-			}
 			if (stage == 2)
 			{
+				if (!soundPlay)
+				{
+					audioSource.PlayOneShot(sound2);
+					soundPlay = true;
+				}
 				if (currentBlendShapes["cheekPuff"] >= 0.13 && (currentBlendShapes["mouthLeft"] >= 0.04 || currentBlendShapes["mouthFrown_R"] >= 0.3))
 				{
 					hugugao_2 = true;
@@ -285,13 +285,13 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				}
 			}
 
-			if (!soundPlay)
-			{
-				audioSource.PlayOneShot(sound3);
-				soundPlay = true;
-			}
 			if (stage == 3)
 			{
+				if (!soundPlay)
+				{
+					audioSource.PlayOneShot(sound3);
+					soundPlay = true;
+				}
 				if (currentBlendShapes["cheekPuff"] >= 0.13 && (currentBlendShapes["mouthRight"] >= 0.02 || currentBlendShapes["mouthFrown_L"] >= 0.21))
 				{
 					hugugao_3 = true;
