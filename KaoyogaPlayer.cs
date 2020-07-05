@@ -219,8 +219,6 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				playSystemSound(1022);
 				#endif
 
-				soundPlay = false;
-
 			}
 			else if (keep)
 			{
@@ -229,6 +227,8 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				{
 					countup2 = 0;
 					stage++;
+
+					soundPlay = false;
 				}
 			}
 
@@ -270,8 +270,6 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				#else
 				playSystemSound(1022);
 				#endif
-
-				soundPlay = false;
 			}
 			else if (keep2)
 			{
@@ -280,6 +278,8 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				{
 					countup2 = 0;
 					stage++;
+
+					soundPlay = false;
 				}
 			}
 	}
@@ -323,6 +323,7 @@ void FaceRemoved(ARFaceAnchor anchorData)
 				audioSource.PlayOneShot(sound4);
 				soundPlay = true;
 				}
+				soundPlay = false;
 			}
 		}
 
