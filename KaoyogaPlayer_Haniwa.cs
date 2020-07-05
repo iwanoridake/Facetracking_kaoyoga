@@ -92,7 +92,7 @@ public class KaoyogaPlayer_Haniwa : MonoBehaviour
 					}
 					else
 					{
-						blendshapes = "目線を上に向けましょう！";
+						blendshapes = "目線を上に向けて" + ("\n") + "10秒キープしましょう";
 					}
 				}
 				else
@@ -128,8 +128,8 @@ public class KaoyogaPlayer_Haniwa : MonoBehaviour
 			}
 
 
-			/*//GUI.skin.box.fontSize = 22;
-			GUI.skin.box.fontSize = 40;
+			//GUI.skin.box.fontSize = 22;
+			GUI.skin.box.fontSize = 50;/*
 			GUILayout.BeginHorizontal(GUILayout.ExpandHeight(true));
 			GUILayout.Box(blendshapes);
 			//GUILayout.Box(keep);
@@ -177,6 +177,8 @@ public class KaoyogaPlayer_Haniwa : MonoBehaviour
 		shapeEnabled = false;
 	}
 
+	[System.Runtime.InteropServices.DllImport("__Internal")]
+	private static extern void playSystemSound(int n);
 
 	// Update is called once per frame
 	void Update()
@@ -200,6 +202,12 @@ public class KaoyogaPlayer_Haniwa : MonoBehaviour
             {
 				keep = true;
 				countup = 0;
+				#if UNITY_EDITOR
+				Debug.Log("Play system sound or vibration on real devices");
+				#else
+				playSystemSound(1001);
+				#endif
+
 				StartCoroutine("DelayMethod");
             }
 		}
@@ -223,6 +231,12 @@ public class KaoyogaPlayer_Haniwa : MonoBehaviour
 			{
 				keep2 = true;
 				countup = 0;
+				#if UNITY_EDITOR
+				Debug.Log("Play system sound or vibration on real devices");
+				#else
+				playSystemSound(1001);
+				#endif
+
 				StartCoroutine("DelayMethod");
 			}
 		}

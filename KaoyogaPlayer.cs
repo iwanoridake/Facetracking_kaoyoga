@@ -129,7 +129,7 @@ void OnGUI()
 
 
 			//GUI.skin.box.fontSize = 22;
-			GUI.skin.box.fontSize = 40;/*
+			GUI.skin.box.fontSize = 50;/*
 			GUILayout.BeginHorizontal(GUILayout.ExpandHeight(true));
 			GUILayout.Box(blendshapes);
 			GUILayout.EndHorizontal();

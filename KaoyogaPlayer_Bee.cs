@@ -143,11 +143,28 @@ public class KaoyogaPlayer_Bee : MonoBehaviour
 
 
 			//GUI.skin.box.fontSize = 22;
-			GUI.skin.box.fontSize = 40;
+			GUI.skin.box.fontSize = 50;/*
 			GUILayout.BeginHorizontal(GUILayout.ExpandHeight(true));
 			GUILayout.Box(blendshapes);
 			//GUILayout.Box(keep);
+			GUILayout.EndHorizontal();*/
+			Rect windowRect = new Rect(0, 0, UnityEngine.Screen.width, UnityEngine.Screen.height);
+			GUILayout.BeginArea(windowRect);
+			GUILayout.FlexibleSpace();
+			GUILayout.BeginHorizontal();
+			GUILayout.FlexibleSpace();
+
+			GUILayout.Box(blendshapes);
+
+			GUILayout.FlexibleSpace();
 			GUILayout.EndHorizontal();
+			GUILayout.FlexibleSpace();
+			GUILayout.EndArea();
+
+
+			Debug.Log(shapeNames);
+			Debug.Log(valueNames);
+
 
 
 			Debug.Log(shapeNames);
