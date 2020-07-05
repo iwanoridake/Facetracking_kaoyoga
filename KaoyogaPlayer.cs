@@ -186,147 +186,149 @@ void FaceRemoved(ARFaceAnchor anchorData)
 	void Update()
 	{
 
-		
-		if(!soundPlay)
+		if (shapeEnabled)
 		{
-			audioSource.PlayOneShot(sound1);
-			soundPlay = true;
-		}
-		if(stage==1)
-		{
-			if (currentBlendShapes["cheekPuff"] >= 0.18)
+			if (!soundPlay)
 			{
-				hugugao = true;
-				if (!keep)
-				{
-					countup += Time.deltaTime;
-					
-				}
-			}
-			else
-			{
-				hugugao = false;
-				countup = 0;
-			}
-			if (countup > 5.0f)
-			{
-				keep = true;
-				countup = 0;
-
-				#if UNITY_EDITOR
-				Debug.Log("Play system sound or vibration on real devices");
-				#else
-				playSystemSound(1022);
-				#endif
-
-			}
-			else if (keep)
-			{
-				countup2 += Time.deltaTime;
-				if (countup2 > 2.0f)
-				{
-					countup2 = 0;
-					stage++;
-
-					soundPlay = false;
-				}
-			}
-
-
-
-
-
-		}
-
-		if(!soundPlay)
-		{
-			audioSource.PlayOneShot(sound2);
-			soundPlay = true;
-		}
-		if (stage == 2)
-		{
-			if (currentBlendShapes["cheekPuff"] >= 0.13 && (currentBlendShapes["mouthLeft"] >= 0.04 || currentBlendShapes["mouthFrown_R"] >= 0.3))
-			{
-				hugugao_2 = true;
-				if (!keep2)
-				{
-					countup += Time.deltaTime;
-					
-				}
-			}
-			else
-			{
-				hugugao_2 = false;
-				countup = 0;
-			}
-			if (countup > 5.0f)
-			{
-				keep2 = true;
-				countup = 0;
-				//StartCoroutine("DelayMethod");
-
-				#if UNITY_EDITOR
-				Debug.Log("Play system sound or vibration on real devices");
-				#else
-				playSystemSound(1022);
-				#endif
-			}
-			else if (keep2)
-			{
-				countup2 += Time.deltaTime;
-				if (countup2 > 2.0f)
-				{
-					countup2 = 0;
-					stage++;
-
-					soundPlay = false;
-				}
-			}
-	}
-
-		if(!soundPlay)
-		{
-			audioSource.PlayOneShot(sound3);
-			soundPlay = true;
-		}
-		if (stage == 3)
-		{
-			if (currentBlendShapes["cheekPuff"] >= 0.13 && (currentBlendShapes["mouthRight"] >= 0.02 || currentBlendShapes["mouthFrown_L"] >= 0.21))
-			{
-				hugugao_3 = true;
-				if (!keep3)
-				{
-					countup += Time.deltaTime;
-					
-				}
-			}
-			else
-			{
-				hugugao_3 = false;
-				countup = 0;
-			}
-			if (countup > 5.0f)
-			{
-				keep3 = true;
-				countup = 0;
-				StartCoroutine("DelayMethod");
-
-				#if UNITY_EDITOR
-				Debug.Log("Play system sound or vibration on real devices");
-				#else
-				playSystemSound(1022);
-				#endif
-
-				soundPlay = false;
-				if(!soundPlay)
-				{
-				audioSource.PlayOneShot(sound4);
+				audioSource.PlayOneShot(sound1);
 				soundPlay = true;
-				}
-				soundPlay = false;
 			}
+			if (stage == 1)
+			{
+				if (currentBlendShapes["cheekPuff"] >= 0.18)
+				{
+					hugugao = true;
+					if (!keep)
+					{
+						countup += Time.deltaTime;
+
+					}
+				}
+				else
+				{
+					hugugao = false;
+					countup = 0;
+				}
+				if (countup > 5.0f)
+				{
+					keep = true;
+					countup = 0;
+
+#if UNITY_EDITOR
+					Debug.Log("Play system sound or vibration on real devices");
+#else
+				playSystemSound(1022);
+#endif
+
+				}
+				else if (keep)
+				{
+					countup2 += Time.deltaTime;
+					if (countup2 > 2.0f)
+					{
+						countup2 = 0;
+						stage++;
+
+						soundPlay = false;
+					}
+				}
+
+
+
+
+
+			}
+
+			if (!soundPlay)
+			{
+				audioSource.PlayOneShot(sound2);
+				soundPlay = true;
+			}
+			if (stage == 2)
+			{
+				if (currentBlendShapes["cheekPuff"] >= 0.13 && (currentBlendShapes["mouthLeft"] >= 0.04 || currentBlendShapes["mouthFrown_R"] >= 0.3))
+				{
+					hugugao_2 = true;
+					if (!keep2)
+					{
+						countup += Time.deltaTime;
+
+					}
+				}
+				else
+				{
+					hugugao_2 = false;
+					countup = 0;
+				}
+				if (countup > 5.0f)
+				{
+					keep2 = true;
+					countup = 0;
+					//StartCoroutine("DelayMethod");
+
+#if UNITY_EDITOR
+					Debug.Log("Play system sound or vibration on real devices");
+#else
+				playSystemSound(1022);
+#endif
+				}
+				else if (keep2)
+				{
+					countup2 += Time.deltaTime;
+					if (countup2 > 2.0f)
+					{
+						countup2 = 0;
+						stage++;
+
+						soundPlay = false;
+					}
+				}
+			}
+
+			if (!soundPlay)
+			{
+				audioSource.PlayOneShot(sound3);
+				soundPlay = true;
+			}
+			if (stage == 3)
+			{
+				if (currentBlendShapes["cheekPuff"] >= 0.13 && (currentBlendShapes["mouthRight"] >= 0.02 || currentBlendShapes["mouthFrown_L"] >= 0.21))
+				{
+					hugugao_3 = true;
+					if (!keep3)
+					{
+						countup += Time.deltaTime;
+
+					}
+				}
+				else
+				{
+					hugugao_3 = false;
+					countup = 0;
+				}
+				if (countup > 5.0f)
+				{
+					keep3 = true;
+					countup = 0;
+					StartCoroutine("DelayMethod");
+
+#if UNITY_EDITOR
+					Debug.Log("Play system sound or vibration on real devices");
+#else
+				playSystemSound(1022);
+#endif
+
+					soundPlay = false;
+					if (!soundPlay)
+					{
+						audioSource.PlayOneShot(sound4);
+						soundPlay = true;
+					}
+					soundPlay = false;
+				}
+			}
+
+
 		}
-
-
 	}
 }
